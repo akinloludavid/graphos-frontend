@@ -1,0 +1,17 @@
+
+
+  <div class="card mb-4 p-2" >
+    <img class="card-img-top" src={{imgUrl}} alt="Card image cap" (click)="readMore(post)">
+    <div class="card-body">
+      <h4 class="blog-author">{{post.creator?.username}}</h4>
+      <h2 class="blog-title" (click)="readMore(post)">{{post.title}}</h2>
+      <p class="blog-date">{{dateConvert(post.createdAt)}}</p>
+
+      <div class="card-footer d-flex justify-content-between">
+        <div><fa-icon [icon]="faThumbsUp" (click)="likePost(post)" [class.active]="isActive"></fa-icon></div>
+        <div><fa-icon [icon]="faBookmark" (click)="bookMarkPost(post)"></fa-icon></div>
+      </div>
+    </div>
+
+  </div>
+

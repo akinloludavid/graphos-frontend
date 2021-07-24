@@ -1,0 +1,30 @@
+<div class="myfeed-container">
+  <div class="w-50 mt-4 mr-4 ml-auto">
+    <input type="email" class="form-control w-60" ngModel name="search" #search="ngModel" placeholder="Search">
+  </div>
+  <div class="row" *ngIf = "isLoading">
+
+    <div class="col-md-12 text-center">
+
+      <ngx-skeleton-loader class="loader" count="3" [theme]="{
+          'border-radius': '5px',
+          height: '200px',
+          width: '28%',
+          'background-color': '#f5f6fa',
+          border: '1px solid white'
+        }"></ngx-skeleton-loader>
+    </div>
+  </div>
+  <div class="row blog-card-container">
+    <app-blogcard
+    *ngFor="let post of allPosts"
+    (onReadMore) = "readFullPost(post)"
+    (onLikePost)="likeAPost(post)"
+    class="col-md-4"
+    imgUrl = "{{imgUrl}}"
+    [post]="post"
+    ></app-blogcard>
+  </div>
+</div>
+
+<!-- [routerLink]="['/feeds', post._id]" -->

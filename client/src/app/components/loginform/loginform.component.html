@@ -1,0 +1,21 @@
+<div class="login-container">
+  <h2>Continue from where you left off</h2>
+  <form ngForm #form ="ngForm" (ngSubmit)="signIn(form.value)">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" ngModel name="email" #email="ngModel" id="exampleInputEmail1"
+        aria-describedby="emailHelp" placeholder="Enter email" >
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" ngModel name="password" #password="ngModel"
+        required id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <button class="btn btn-primary w-100">Sign In</button>
+
+    {{form.value | json}}
+  </form>
+
+   <p class="mt-4">If you don't have an account? <a [routerLink]="['/signup']">Sign up here</a></p>
+</div>

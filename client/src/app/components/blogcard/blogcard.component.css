@@ -1,0 +1,21 @@
+.card{
+  cursor: pointer;
+}
+
+.blog-title{
+  color: #353b48;
+}
+
+.blog-author{
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.blog-date{
+  font-style: italic;
+}
+
+.active{
+  background-color: #4834d4 !important;
+  /* color:black!important; */
+}

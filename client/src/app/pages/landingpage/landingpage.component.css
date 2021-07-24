@@ -1,0 +1,101 @@
+
+.custom-container{
+  border:1px solid #dff9fb;
+  margin-left: auto;
+  justify-content:center;
+   width:80vw;
+}
+.custom-container h2{
+  font-size: 36px;
+  /* text-align: center; */
+}
+.header-buttons button {
+  font-size:18px;
+}
+.header{
+  display: flex;
+  height:80px;
+  align-items: center;
+}
+.header h3{
+  font-size: 20px;
+}
+.hero-section{
+
+  text-align: center;
+  padding:5%;
+}
+.hero-section h2{
+  margin-top:10%;
+  font-size: 48px;
+  font-weight: 700;
+}
+.hero-section h5{
+  margin: 5% auto;
+  width:50%;
+  font-size: 24px;
+
+  font-weight: 400;
+  color:#718093;
+}
+
+.hero-section button{
+  padding: 15px;
+  font-weight: 400;
+  font-size: 18px;
+}
+.about-section{
+  padding:5%;
+}
+.about-section p{
+  font-size: 20px;
+}
+.content-owner-section{
+  padding-top:10%;
+}
+.content-owner-section h2{
+  margin: auto;
+  text-align: center;
+}
+
+.content-owner-cards{
+  justify-content:space-around;
+}
+.content-owner-cards h3{
+  font-size: 18px;
+  font-weight: 700;
+}
+.content-owner-cards .col-md-3{
+  padding:2%;
+  border-radius: 4px;
+  background-color: #feffff;
+  box-shadow: 2px 4px 8px #7f8fa6;
+}
+
+.get-started{
+  text-align: center;
+  margin-top: 5%;
+  justify-content: center;
+}
+.get-started button {
+   padding:10px 20px;
+   font-size: 24px;
+   margin-bottom:80px;
+}
+.trending-bloggers{
+  margin-top:10%;
+}
+.trending-bloggers h3{
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.svg-icons{
+  width:80%
+}
+.social-icons .media-icon{
+  margin-right:30px;
+  width:30px;
+  font-size: 32px;
+  cursor: pointer;
+}

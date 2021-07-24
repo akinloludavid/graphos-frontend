@@ -1,0 +1,35 @@
+<div  class="sidemenu d-block mr-auto">
+  <div class="sidemenu-container ml-auto">
+    <div class="nav-brand">
+      <h3 [routerLink]="['/']">graphos</h3>
+      <button class="btn btn-primary" [routerLink]="['/createpost']">
+        <fa-icon [icon]="faPen" class="mr-2"></fa-icon> Write
+      </button>
+    </div>
+    <div class="navbar d-block">
+      <div class="nav-link" [routerLink]="['/feeds']" routerLinkActive="active-link">
+        <fa-icon class="btn" [icon]="faBars"></fa-icon>My Feed
+      </div>
+      <div class="nav-link" [routerLink]="['/explore']" routerLinkActive="active-link">
+        <fa-icon class="btn" [icon]="faCompass"></fa-icon>Explore
+      </div>
+      <div class="nav-link" [routerLink]="['/mybookmarks']" routerLinkActive="active-link">
+        <fa-icon class="btn" [icon]="faTags"></fa-icon>Bookmarks
+      </div>
+      <div class="nav-link" [routerLink]="['/tags']" routerLinkActive="active-link">
+        <fa-icon class="btn" [icon]="faBookmark"></fa-icon>Tags
+      </div>
+      <div class="nav-link" [routerLink]="['/search']" routerLinkActive="active-link">
+        <fa-icon class="btn" [icon]="faSearch"></fa-icon>Search
+      </div>
+      <div class="nav-link" [routerLink]="['jd']" routerLinkActive="active-link">
+        <fa-icon class="btn" [icon]="faUser"></fa-icon>My profile
+      </div>
+    </div>
+
+    <div class="user-settings">
+      <button class="btn btn-outline-danger" [routerLink]="['/']" (click)="logOut()">Log out</button>
+      <div class="user-profile">{{username}}</div>
+    </div>
+  </div>
+</div>

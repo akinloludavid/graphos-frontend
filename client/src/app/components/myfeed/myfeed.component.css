@@ -1,0 +1,10 @@
+.myfeed-container{
+  border:1px solid #dff9fb;
+  margin-left: auto;
+  justify-content:center;
+  width:80vw;
+}
+.blog-card-container{
+  padding:5%;
+  justify-content: flex-start;
+}

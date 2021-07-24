@@ -1,0 +1,26 @@
+<div class="create-blog-container p-3">
+  <form ngForm #form ="ngForm" (ngSubmit)="createPost(form.value)">
+
+    <div class="form-group">
+      <label for="blogtitle">Your blog Title</label>
+      <input type="text" class="form-control" ngModel name ="title" #title ="ngModel"
+        placeholder="Enter title" required>
+    </div>
+
+    <div class="form-group">
+      <label for="blog-subtitle">Your blog subtitle</label>
+      <input type="text" class="form-control" placeholder="Enter subtitle" ngModel name ="subtitle" #subtitle="ngModel">
+    </div>
+
+    <div class="form-group">
+      <label for="content">Example textarea</label>
+      <textarea class="form-control" name ="content" ngModel #content="ngModel"  rows="3" required></textarea>
+    </div>
+
+    <button class="btn btn-primary" [disabled]="!form.valid">
+      Create
+    </button>
+
+  </form>
+  {{form.value | json}}
+</div>
