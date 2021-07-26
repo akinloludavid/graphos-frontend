@@ -25,9 +25,4 @@ export class SidemenuComponent implements OnInit {
     this.username = this.userProfile?.username
   }
 
-  logOut(){
-    localStorage.removeItem('graphos-token');
-    localStorage.removeItem('graphos-userprofile');
-    this.router.navigate(['/'])
-  }
 }

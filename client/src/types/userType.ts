@@ -4,7 +4,11 @@ export interface UserModel{
   username?:string
   gender:string
   email:string
-  password:string
+  password:string,
+  bio?:string,
+  _id?:string
+  avatar?:string
+
 }
 
 export interface LoginDetail{
@@ -22,5 +26,7 @@ export interface PostType{
   likes?:string[]
   owner?:any
   createdAt:string
+  updatedAt:string
   creator?:Record<string,any>
+  bookmarks:string[]
 }

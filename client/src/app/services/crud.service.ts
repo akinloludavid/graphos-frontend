@@ -28,4 +28,20 @@ export class CrudService {
   getOnePost(id:string){
     return this.http.get(`${this.blogUrl}/posts/${id}`)
   }
+
+  likePost(post:PostType){
+    return this.http.put(`${this.blogUrl}/likepost/${post._id}`, post, config)
+  }
+
+  updatePost(post:PostType){
+    return this.http.put(`${this.blogUrl}/post/${post._id}`, post, config)
+  }
+
+  bookMarkPost(post:PostType){
+    return this.http.put(`${this.blogUrl}/bookmark/${post._id}`, post, config);
+  }
+
+  getCurrentUserPost(id:string){
+    return this.http.get(`${this.blogUrl}/currentuser/posts/${id}`, config)
+  }
 }

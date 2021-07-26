@@ -30,6 +30,7 @@
   z-index: 2;
   box-shadow: 0px 4px 8px #dcdde1;
   color:#5352ed;
+  background-color: aliceblue;
 }
 
 @media screen and (max-width:768px) {

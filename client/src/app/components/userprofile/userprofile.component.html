@@ -1,0 +1,132 @@
+<div class="user-profile-container">
+  <mat-tab-group animationDuration="0ms">
+    <mat-tab label="Profile">
+      <div class="sign-container p-4">
+        <h2>Update profile</h2>
+        <form ngForm #form="ngForm" (ngSubmit)="updateProfile(form.value)">
+          <div class="form-group">
+            <label for="firstname">FirstName</label>
+            <input
+              type="text"
+              ngModel
+              name="firstname"
+              [(ngModel)]="currentUser && currentUser.firstname"
+              class="form-control"
+              required
+              id="firstname"
+              placeholder="First name"
+              minlength="3"
+              disabled
+            />
+            <!-- <small class="alert-warning" *ngIf="firstname.touched && firstname.errors?.minlength">First name should have
+              at least {{firstname.errors?.minlength?.requiredLength}} words.</small> -->
+          </div>
+          <div class="form-group">
+            <label for="lastname">Last name</label>
+            <input
+              type="text"
+              class="form-control"
+              ngModel
+              name="lastname"
+              [(ngModel)]="currentUser && currentUser.lastname"
+              required
+              id="lastname"
+              placeholder="Last name"
+              minlength="3"
+              disabled
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="content">Bio</label>
+            <textarea
+              class="form-control"
+              name="bio"
+              ngModel
+              [(ngModel)] = "currentUser && currentUser.bio"
+              rows="3"
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              ngModel
+              [(ngModel)]="currentUser && currentUser.gender"
+              name="gender"
+              id="exampleRadios1"
+              value="male"
+              checked
+            />
+            <label class="form-check-label" for="exampleRadios1"> Male </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              ngModel
+              [(ngModel)]="currentUser && currentUser.gender"
+              name="gender"
+              id="exampleRadios2"
+              value="female"
+            />
+            <label class="form-check-label" for="exampleRadios2">
+              Female
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label for="profile">Upload profile image</label>
+            <input type="file" class="form-control" ngModel name="image" #image = "ngModel"
+              id="image"
+            />
+            <input type = "button" class="btn btn-primary" value ="Upload" (click)="uploadImage(image)"/>
+          </div>
+          <button
+            type="submit"
+            class="btn btn-primary mt-3"
+            [disabled]="!form.valid"
+          >
+            Update Account
+          </button>
+
+          {{ form.value | json }}
+        </form>
+
+        <a
+          [routerLink]="['/']"
+          class="btn btn-outline-danger mt-4"
+          (click)="logOut()"
+          >Logout</a
+        >
+      </div>
+    </mat-tab>
+    <mat-tab label="My posts">
+      <div class="row mt-4" *ngIf="isLoading">
+        <div class="col-md-12 text-center">
+          <ngx-skeleton-loader
+            class="loader"
+            count="3"
+            [theme]="{
+              'border-radius': '5px',
+              height: '200px',
+              width: '28%',
+              'background-color': '#f5f6fa',
+              border: '1px solid white'
+            }"
+          ></ngx-skeleton-loader>
+        </div>
+      </div>
+      <div class="row blog-card-container">
+        <app-blogcard
+          class="col-md-4"
+          *ngFor="let post of myposts"
+          (onReadMore)="readFullPost(post)"
+          [post]="post"
+        ></app-blogcard>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

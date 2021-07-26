@@ -1,5 +1,5 @@
-<div class="create-blog-container p-3">
-  <form ngForm #form="ngForm" (ngSubmit)="createPost(form.value)">
+<div class="update-blog-container p-3">
+  <form ngForm #form="ngForm" name ="form" (ngSubmit)="updatePost(form.value)">
     <div class="form-group">
       <label for="blogtitle">Your blog Title</label>
       <input
@@ -7,7 +7,7 @@
         class="form-control"
         ngModel
         name="title"
-        #title="ngModel"
+        [(ngModel)]="currentPost && currentPost.title"
         placeholder="Enter title"
         required
       />
@@ -21,19 +21,7 @@
         placeholder="Enter subtitle"
         ngModel
         name="subtitle"
-        #subtitle="ngModel"
-      />
-    </div>
-
-    <div class="form-group">
-      <label for="blog-subtitle">Tags</label>
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Use comma separated values"
-        ngModel
-        name="tags"
-        #tags ="ngModel"
+        [(ngModel)] = "currentPost && currentPost.subtitle"
       />
     </div>
 
@@ -43,13 +31,13 @@
         class="form-control"
         name="content"
         ngModel
-        #content="ngModel"
+        [(ngModel)] ="currentPost && currentPost.content"
         rows="3"
         required
       ></textarea>
     </div>
 
-    <button class="btn btn-primary" [disabled]="!form.valid">Create</button>
+    <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Update</button>
   </form>
   {{ form.value | json }}
 </div>

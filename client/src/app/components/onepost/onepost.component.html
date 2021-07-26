@@ -1,6 +1,24 @@
 
 <div class="one-post-container">
-  <h2>{{blogPost?.title}}</h2>
-  <h3>{{blogPost?.subtitle}}</h3>
-  <p>{{blogPost?.content}}</p>
+
+  <div class="loader" *ngIf="show">
+    <ngx-skeleton-loader count="5" [theme]="{
+      'height': '20px',
+      'background-color': '#f5f6fa'
+    }"></ngx-skeleton-loader>
+  </div>
+
+  <div class="d-flex">
+    <div class="blog-details">
+      <h2>{{blogPost?.title}}</h2>
+      <h3>{{blogPost?.subtitle}}</h3>
+      <p>{{blogPost?.content}}</p>
+
+    </div>
+
+    <div class="edit-icon ml-auto mr-4" [class.d-none]="!showIcon">
+      <fa-icon [icon]="faPen" (click)= "editPost(blogPost)"></fa-icon>
+    </div>
+
+  </div>
 </div>

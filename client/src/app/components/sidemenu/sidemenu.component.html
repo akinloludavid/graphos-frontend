@@ -22,13 +22,12 @@
       <div class="nav-link" [routerLink]="['/search']" routerLinkActive="active-link">
         <fa-icon class="btn" [icon]="faSearch"></fa-icon>Search
       </div>
-      <div class="nav-link" [routerLink]="['jd']" routerLinkActive="active-link">
+      <div class="nav-link" [routerLink]="['/user-profile']" routerLinkActive="active-link">
         <fa-icon class="btn" [icon]="faUser"></fa-icon>My profile
       </div>
     </div>
 
     <div class="user-settings">
-      <button class="btn btn-outline-danger" [routerLink]="['/']" (click)="logOut()">Log out</button>
       <div class="user-profile">{{username}}</div>
     </div>
   </div>

@@ -15,11 +15,15 @@ export class BlogcardComponent {
   faThumbsUp = faThumbsUp;
   faBookmark = faBookmark;
   isActive = false;
+  bookmarkActive=false;
+
   likePost(post: PostType) {
     this.isActive = !this.isActive;
     this.onLikePost.emit(post);
   }
+
   bookMarkPost(post: PostType) {
+    this.bookmarkActive = !this.bookmarkActive
     this.onBookmarkPost.emit(post);
   }
 
@@ -27,7 +31,6 @@ export class BlogcardComponent {
     console.log(post);
     this.onReadMore.emit(post);
   }
-
 
   dateConvert(x: string) {
     return new Date(x).toLocaleDateString();

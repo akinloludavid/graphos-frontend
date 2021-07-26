@@ -8,9 +8,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidemenuComponent } from './components/sidemenu/sidemenu.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+
 import { MatRippleModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {HttpClientModule} from '@angular/common/http'
+import { MatTabsModule } from '@angular/material/tabs';
+
+import { HttpClientModule } from '@angular/common/http'
 import { SignupformComponent } from './components/signupform/signupform.component';
 import { LoginformComponent } from './components/loginform/loginform.component';
 import { RouterModule } from '@angular/router';
@@ -21,6 +24,9 @@ import { BlogcardComponent } from './components/blogcard/blogcard.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { OnepostComponent } from './components/onepost/onepost.component';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { UpdatePostComponent } from './components/update-post/update-post.component';
+import { BookmarksComponent } from './components/bookmarks/bookmarks.component';
+import { UserprofileComponent } from './components/userprofile/userprofile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +40,9 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     BlogcardComponent,
     NotfoundComponent,
     OnepostComponent,
+    UpdatePostComponent,
+    BookmarksComponent,
+    UserprofileComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,15 +52,19 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     BrowserAnimationsModule,
     MatRippleModule,
     MatFormFieldModule,
+    MatTabsModule,
     HttpClientModule,
-    NgxSkeletonLoaderModule.forRoot({animation:'pulse'}),
+    NgxSkeletonLoaderModule.forRoot({ animation: 'progress' }),
     RouterModule.forRoot([
       { path: '', component: LandingpageComponent },
       { path: 'signup', component: SignupformComponent },
       { path: 'login', component: LoginformComponent },
       { path: 'feeds', component: MyfeedComponent },
+      { path: 'mybookmarks', component:BookmarksComponent},
       { path: 'createpost', component: CreateBlogComponent },
-      {path:'feeds/:postid', component:OnepostComponent},
+      { path: 'feeds/:postid', component: OnepostComponent },
+      { path: 'post/edit/:postid', component: UpdatePostComponent },
+      { path: 'user-profile', component:UserprofileComponent},
       { path: '**', component: NotfoundComponent },
     ]),
   ],
